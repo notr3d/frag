@@ -3,6 +3,7 @@
 @black: #211f21;
 @blue: #3171c2;
 @white: #f2f3f6;
+@grey: #a8a8a8;
 
 .body {
 	background: @white;
@@ -205,6 +206,8 @@
 	cursor: auto;
 }
 
+/////////////////////////////////////////////////////////////////////////////страница товара
+
 //кнопки покупки на странице товара
 .ty-btn__add-to-cart {
 	margin-right: 0 !important;
@@ -234,4 +237,21 @@
 		background: lighten(@red, 5%) !important;
 		color: @white;
 	}
+}
+
+.ty-discount-label {
+	pointer-events: none;
+}
+
+.ty-account-info__orders {
+	border-top: 1px solid @grey;
+}
+
+.ty-cart-items {
+	padding: 5px 15px;
+}
+
+.cm-cart-buttons {
+	border-top: 1px solid @grey;
+	padding: 15px;
 }
