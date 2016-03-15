@@ -1,0 +1,40 @@
+@red: #ec1a24;
+@black: #211f21;
+@blue: #3171c2;
+
+.tygh-top-panel {
+	background: @black;
+}
+
+.main-catalog {
+	.ty-menu__items {
+		background: #eee;
+	}
+	.ty-menu__item {
+		border: 1px solid #ddd;
+		margin-left: -1px;
+		&-link {
+			color: lighten(@black, 25%);
+			font-weight: bold;
+		}
+		&-active {
+			background: @red;
+			color: #fff;
+		}
+		&:hover {
+			.ty-menu__item-link {
+				background: none;
+				color: @black;
+				box-shadow: 
+					-1px 2px 1px 0 lighten(@black, 25%) inset,
+					1px 2px 1px 0 lighten(@black, 25%) inset,
+					0 5px 0 0 @black inset;
+			}
+		}
+	}
+	.ty-menu__submenu-items {
+		padding-bottom: 5px;
+		border: none;
+		box-shadow: 0 0 1px 1px lighten(@black, 25%) inset;
+	}
+}
