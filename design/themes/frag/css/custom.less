@@ -1,24 +1,41 @@
+//цвета
 @red: #ec1a24;
 @black: #211f21;
 @blue: #3171c2;
+@white: #f2f3f6;
+
+.body {
+	background: @white;
+}
 
 .tygh-top-panel {
 	background: @black;
 }
 
+.site-logo {
+	margin-bottom: 15px;
+}
+//верхнее меню (каталог товаров)
+.main-menu {
+	border: 1px solid #ddd;
+	background: #eee;
+}
+
+.main-search {
+	margin: 6px;
+}
 .main-catalog {
 	.ty-menu__items {
-		background: #eee;
+		
 	}
 	.ty-menu__item {
-		border: 1px solid #ddd;
+		border-right: 1px solid #ddd;
 		margin-left: -1px;
 		&-link {
 			color: lighten(@black, 25%);
 			font-weight: bold;
 		}
-		&-active {
-			background: @red;
+		&-active {			
 			color: #fff;
 		}
 		&:hover {
@@ -26,15 +43,127 @@
 				background: none;
 				color: @black;
 				box-shadow: 
-					-1px 2px 1px 0 lighten(@black, 25%) inset,
-					1px 2px 1px 0 lighten(@black, 25%) inset,
 					0 5px 0 0 @black inset;
 			}
 		}
 	}
 	.ty-menu__submenu-items {
-		padding-bottom: 5px;
-		border: none;
-		box-shadow: 0 0 1px 1px lighten(@black, 25%) inset;
+		padding: 8px 15px 0;
+		background: #eee;
+		border: 1px solid #ddd;
+		min-width: 105px;
+	}
+	.ty-menu__submenu-link {
+		color: @black;	
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+	.ty-menu__submenu-item {
+		min-width: 100px;
+		&:hover {
+			.ty-menu__submenu-link {
+				color: @red;
+			}
+		}
+	}
+}
+
+//кнопка купить на всю длину с плавной анимацией
+.ty-btn__secondary {
+	min-width: 300px;
+	box-sizing: border-box;
+}
+
+.ty-quick-view-button {
+	transition: all .3s;
+	opacity: 0;
+}
+
+.ty-grid-list__item:hover .ty-quick-view-button {
+	opacity: 1;
+}
+
+//кнопки переключения страниц квадратные
+.owl-prev {
+	border-radius: 0 !important;
+}
+
+.owl-next {
+	border-radius: 0 !important;
+}
+
+//custom checkboxes
+.cm-product-filters-checkbox {
+	position: relative;
+	&::before {
+		content: '';
+		display: block;
+		width: 12px;
+		height: 12px;
+		background: #fff;
+		border: 1px solid #ddd;
+		position: absolute;
+		left: 0;
+		top: 0;
+		pointer-events: none;		
+		transition: all .3s;
+	}
+	&::after {
+		content: '';
+		display: none;
+		width: 6px;
+		height: 3px;
+		border-left: 2px solid @blue;
+		border-bottom: 2px solid @blue;
+		position: absolute;
+		left: 3px;
+		top: 4px;
+		transform:rotate(-45deg);
+		pointer-events: none;
+	}
+	&:checked {
+		&::after {
+			display: block;
+		}
+	}
+	&:hover {
+		&::before {
+			border-color: @blue;
+		}
+	}
+}
+
+.ty-pagination {
+	&__item {	
+		border-radius: 0 !important;
+		&:hover {
+			background: lighten(@blue, 15%) !important;
+			color: #fff;
+		}
+	}
+	&__selected {
+		padding: 4px 8px;
+		border-radius: 0 !important;
+	}
+}
+
+.ty-footer-form-block__title {
+	padding-left: 40px;
+	background: url(../media/images/letter.png) no-repeat 0 50%;
+	background-size: 30px;
+}
+
+.ty-btn-go {
+	width: 120px;
+	line-height: 10px;
+}
+
+.ty-btn-go__icon {
+	top: 2px;
+	&::before {
+		content: 'Подписаться';
+		font-family: 'Open Sans', sans-serif;
+		font-size: 14px;
+		font-weight: bold;
 	}
 }
