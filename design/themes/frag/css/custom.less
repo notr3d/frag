@@ -69,9 +69,12 @@
 }
 
 //кнопка купить на всю длину с плавной анимацией
-.ty-btn__secondary {
-	min-width: 300px;
-	box-sizing: border-box;
+.ty-quick-view-button {
+	.ty-btn__secondary {
+		min-width: 300px;
+		box-sizing: border-box;
+		font-weight: bold;
+	}	
 }
 
 .ty-quick-view-button {
@@ -92,7 +95,7 @@
 	border-radius: 0 !important;
 }
 
-//custom checkboxes
+//кастомные чекбоксы
 .cm-product-filters-checkbox {
 	position: relative;
 	&::before {
@@ -133,8 +136,10 @@
 	}
 }
 
+//пагинатор
 .ty-pagination {
 	&__item {	
+		font-weight: bold;
 		border-radius: 0 !important;
 		&:hover {
 			background: lighten(@blue, 15%) !important;
@@ -143,27 +148,90 @@
 	}
 	&__selected {
 		padding: 4px 8px;
+		font-weight: bold;
 		border-radius: 0 !important;
 	}
 }
 
+//картинка для "оставайтесь на связи"
 .ty-footer-form-block__title {
 	padding-left: 40px;
 	background: url(../media/images/letter.png) no-repeat 0 50%;
 	background-size: 30px;
 }
 
-.ty-btn-go {
-	width: 120px;
-	line-height: 10px;
+//кнопка "подписаться"
+.ty-footer-form-block__form {
+	.ty-btn-go {
+		outline: none;
+		width: 120px;
+		line-height: 10px;
+		transition: all .3s;
+		&:hover {		
+			background: lighten(@blue, 5%);	
+			.ty-btn-go__icon {
+				&::before {
+					color: @white;
+				}
+			}
+		}
+	}
+
+	.ty-btn-go__icon {
+		transition: all .3s;
+		top: 2px;
+		&::before {
+			content: 'Подписаться';
+			font-family: 'Open Sans', sans-serif;
+			font-size: 14px;
+			font-weight: bold;
+		}
+	}	
 }
 
-.ty-btn-go__icon {
-	top: 2px;
-	&::before {
-		content: 'Подписаться';
-		font-family: 'Open Sans', sans-serif;
-		font-size: 14px;
-		font-weight: bold;
+
+//ссылки в футере
+.ty-footer-menu__item {
+	transition: all .3s;
+	&:hover {
+		padding-left: 10px;
+		a {
+			color: @links;
+		}
+	}
+}
+
+.ty-footer-general__header {
+	cursor: auto;
+}
+
+//кнопки покупки на странице товара
+.ty-btn__add-to-cart {
+	margin-right: 0 !important;
+}
+
+.ty-cr-product-button {
+	background: @red !important;
+	margin-right: 0 !important;
+	padding: 6px 17px;
+	font-size: 14px;
+	color: @white;
+	&:hover {
+		padding: 6px 17px;
+		background: lighten(@red, 5%) !important;
+		color: @white;
+	}
+}
+
+.ty-add-to-wish {
+	background: @red !important;
+	margin-right: 0 !important;
+	padding: 6px 17px;
+	font-size: 14px;
+	color: @white;
+	&:hover {
+		padding: 6px 17px;
+		background: lighten(@red, 5%) !important;
+		color: @white;
 	}
 }
