@@ -14,6 +14,9 @@
 
 textarea {
 	resize: vertical;
+	&:hover {
+		border-color: lighten(@blue, 20%);
+	}
 }
 .tygh-top-panel {
 	background: @black;
@@ -32,9 +35,6 @@ textarea {
 	margin: 6px;
 }
 .main-catalog {
-	.ty-menu__items {
-		
-	}
 	.ty-menu__item {
 		border-right: 1px solid #ddd;
 		margin-left: -1px;
@@ -50,13 +50,15 @@ textarea {
 			.ty-menu__item-link {
 				background: none;
 				color: @black;
-				box-shadow: 
-					0 5px 0 0 @black inset;
+				box-shadow: 0 5px 0 0 @black inset;
 			}
 			.ty-menu__submenu-items {
 				visibility: visible;
 				opacity: 1;
-				top: 100%;
+				top: 100%;				
+			}
+			.ty-menu__submenu-item {
+				margin-bottom: 10px;
 			}
 		}
 	}
@@ -77,6 +79,8 @@ textarea {
 		margin-bottom: 5px;
 	}
 	.ty-menu__submenu-item {
+		margin-bottom: 5px;
+		transition: all .3s;
 		min-width: 100px;
 		&:hover {
 			.ty-menu__submenu-link {
@@ -87,7 +91,7 @@ textarea {
 	.ty-menu__submenu-item-header {
 		border-bottom: 1px solid #ddd;
 	}
-	.ty-top-mine__submenu-col {
+	/*.ty-top-mine__submenu-col {
 		&:not(:last-child) {
 			position: relative;
 			&::before {
@@ -100,7 +104,7 @@ textarea {
 				left: 100% + 4px;
 			}
 		}
-	}
+	}*/
 	.ty-menu__submenu-alt-link {
 		.ty-menu__submenu-link {			
 			font-weight: bold;	
@@ -286,10 +290,13 @@ input[type="checkbox"] {
 }
 
 .ty-footer-general__header {
-	pointer-events: none;
+	cursor: default;
+	color: lighten(@footer_text, 15%);
+	margin-bottom: 25px;
 }
 
-/////////////////////////////////////////////////////////////////////////////страница товара
+
+//страница товара
 
 //кнопки покупки на странице товара
 .ty-btn__add-to-cart {
@@ -380,6 +387,7 @@ input[type="checkbox"] {
 .ty-gift-certificate__switch {
 	border-radius: 0 !important;
 	background: #eee !important;
+	border-width: 1px !important;
 }
 
 //радио
@@ -430,12 +438,21 @@ input[type="checkbox"] {
 	.ui-slider-handle {
 		border: 1px solid #ddd;
 		border-radius: 5px;
+		background: #fff;
+		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 	}
 }
 .ty-price-slider__input-text {
 	width: 50% - 10px;
 }
 
+.ty-range-slider__item {
+	&:first-child {
+		left: -1px !important;
+	}
+}
+
+//боковое меню
 .ty-sidebox {
 	padding: 15px;
 	border: 1px solid #ddd;
@@ -448,4 +465,64 @@ input[type="checkbox"] {
 .footer-copyright {
 	background: @black;
 	padding-bottom: 15px;
+}
+
+//+ -
+.ty-value-changer__decrease {
+	&:hover {
+		border-color: @blue;
+		background: transparent !important;
+		color: @blue !important;
+	}
+	&:active {
+		background: lighten(@blue, 15%) !important;
+		color: @white !important;
+	}
+}
+
+.ty-value-changer__increase {
+	&:hover {
+		border-color: @blue;
+		background: transparent !important;
+		color: @blue !important;
+	}
+	&:active {
+		background: lighten(@blue, 15%) !important;
+		color: @white !important;
+	}
+}
+
+input[type="text"] {
+	&:hover {
+		border-color: lighten(@blue, 20%);
+	}
+}
+
+.ty-btn {
+	&:active {
+		box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.33);
+	}
+}
+
+//всплывающее окно
+.ui-dialog {
+	border-radius: 15px;
+}
+
+.ty-discussion__review-a {
+	border: 1px solid #ddd;
+	padding: 5px 10px;
+	background: #eee;
+	&:hover {
+		box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.15);
+	}
+}
+
+.ty-discussion__review-write {
+	border: 1px solid #ddd;
+	padding: 5px 10px;
+	background: #eee;
+	&:hover {
+		box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.15);
+	}
 }
