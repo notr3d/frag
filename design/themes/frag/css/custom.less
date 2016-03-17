@@ -5,6 +5,9 @@
 @white: #f2f3f6;
 @grey: #a8a8a8;
 
+@mobile: ~ "(max-width: 767px)";
+@desktop: ~ "(min-width: 768px)";
+
 * {
 	&::selection {
 		background: #b3d4fc;
@@ -23,22 +26,32 @@ textarea {
 }
 
 .site-logo {
-	margin-bottom: 15px;
+	
 }
+
 //верхнее меню (каталог товаров)
 .main-menu {
 	border: 1px solid #ddd;
 	background: #eee;
+	margin-top: 15px;
+}
+
+.ty-cr-content-grid {
+	margin-top: 15px;
 }
 
 .main-search {
 	margin: 6px;
 }
+
 .main-catalog {
 	.ty-menu__item {
 		border-right: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;		
 		margin-left: -1px;
-		z-index: 201;
+		margin-bottom: -1px;
+		margin-right: -1px;
+		position: relative;
 		&-link {
 			color: lighten(@black, 25%);
 			font-weight: bold;
@@ -51,17 +64,23 @@ textarea {
 				background: none;
 				color: @black;
 				box-shadow: 0 5px 0 0 @black inset;
+				@media @mobile {
+					box-shadow: none;
+				}
 			}
 			.ty-menu__submenu-items {
 				visibility: visible;
 				opacity: 1;
-				top: 100%;				
+				top: 100%;
 			}
-			.ty-menu__submenu-item {
-				margin-bottom: 10px;
+			@media @desktop {
+				.ty-menu__submenu-item {
+					margin-bottom: 10px;
+				}
 			}
 		}
 	}
+	
 	.ty-menu__submenu-items {
 		padding: 8px 15px 0;
 		//background: #eee;
@@ -72,6 +91,11 @@ textarea {
 		visibility: hidden;
 		opacity: 0;
 		top: 90%;
+		@media @mobile {
+			display: none;
+			visibility: visible;
+			opacity: 1;
+		}
 	}
 	.ty-menu__submenu-link {
 		color: @black;	
@@ -116,6 +140,9 @@ textarea {
 		.ty-menu__submenu-link {			
 			font-weight: bold;	
 		}
+	}
+	.ty-menu__item-toggle {
+		height: 100%;
 	}
 }
 
@@ -584,8 +611,8 @@ input[type=email], {
 	.ty-cr-link {		
 		span {
 			display: inline-block;
-			padding: 5px 3px 5px 24px;
-			font-size: 14px !important;
+			padding: 12px 20px 12px 44px;
+    		font-size: 16px !important;
 			color: #fff;
 			background: #f90 url('../../../../../../../../design/themes/frag/media/images/phone.png?1458199720') no-repeat 12px 50%;
 		}
