@@ -84,7 +84,14 @@ textarea {
 		min-width: 100px;
 		&:hover {
 			.ty-menu__submenu-link {
-				color: @red;
+				color: @blue;
+			}
+		}
+		&-active {
+			padding: 0;
+			.ty-menu__submenu-link {
+				display: block !important;
+				background: @discount_label !important;
 			}
 		}
 	}
@@ -275,8 +282,17 @@ input[type="checkbox"] {
 			font-weight: bold;
 		}
 	}	
+	input {
+		background: #fff;
+		&:hover {
+			background: #eee !important;
+		}
+	}
 }
 
+.ty-btn__big {
+	margin-right: 0 !important;
+}
 
 //ссылки в футере
 .ty-footer-menu__item {
@@ -304,27 +320,27 @@ input[type="checkbox"] {
 }
 
 .ty-cr-product-button {
-	background: @red !important;
+	background: @discount_label !important;
 	margin-right: 0 !important;
 	padding: 6px 17px;
 	font-size: 14px;
 	color: @white;
 	&:hover {
 		padding: 6px 17px;
-		background: lighten(@red, 5%) !important;
+		background: lighten(@discount_label, 5%) !important;
 		color: @white;
 	}
 }
 
 .ty-add-to-wish {
-	background: @red !important;
+	background: @discount_label !important;
 	margin-right: 0 !important;
 	padding: 6px 17px;
 	font-size: 14px;
 	color: @white;
 	&:hover {
 		padding: 6px 17px;
-		background: lighten(@red, 5%) !important;
+		background: lighten(@discount_label, 5%) !important;
 		color: @white;
 	}
 }
@@ -337,9 +353,10 @@ input[type="checkbox"] {
 //окошко аккаунта
 .ty-account-info__orders {
 	border-top: 1px solid @grey;
+	margin-top: 10px !important;
 }
 
-// окно корзинки
+//окно корзинки
 .ty-cart-items {
 	padding: 5px 15px;
 }
@@ -384,7 +401,7 @@ input[type="checkbox"] {
 	}
 }
 
-.ty-gift-certificate__switch {
+.ty-address-switch {
 	border-radius: 0 !important;
 	background: #eee !important;
 	border-width: 1px !important;
@@ -492,9 +509,23 @@ input[type="checkbox"] {
 	}
 }
 
-input[type="text"] {
+//инпуты текстовые
+input[type=text],
+input[type=password],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=color],
+input[type=email], {
+    border: 1px solid #ccc;  
+	transition: all .3s;
+	box-shadow: inset 0 0 2px 0px rgba(0,0,0,0.2);
 	&:hover {
 		border-color: lighten(@blue, 20%);
+		background: rgba(238, 238, 238, 0.5);
+	}
+	&:active {
+		border-color: @blue;
 	}
 }
 
@@ -524,5 +555,48 @@ input[type="text"] {
 	background: #eee;
 	&:hover {
 		box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, 0.15);
+	}
+}
+
+//кастомные элементы списка
+/*li {
+	list-style: none !important;
+	position: relative;
+	&::before {
+		content: '';
+		display: block;
+		width: 10px;
+		height: 2px;
+		background: @blue;
+		position: absolute;
+		left: -15px;
+		top: 10px;
+
+	}
+}*/	
+
+//обратный звонок
+.ty-cr-phone-number-link {
+	.ty-cr-phone {
+		font-size: 24px !important;
+		margin-bottom: 10px;
+	}
+	.ty-cr-link {		
+		span {
+			display: inline-block;
+			padding: 5px 3px 5px 24px;
+			font-size: 14px !important;
+			color: #fff;
+			background: #f90 url('../../../../../../../../design/themes/frag/media/images/phone.png?1458199720') no-repeat 12px 50%;
+		}
+	}
+}
+
+.ty-subcategories__item {
+	margin-right: 0;
+	span {
+		padding: 5px 10px;
+		border: 1px solid #ddd;
+		background: #eee;
 	}
 }
