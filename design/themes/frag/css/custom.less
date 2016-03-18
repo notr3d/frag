@@ -25,6 +25,12 @@ textarea {
 }
 .tygh-top-panel {
 	background: @black;
+	.ty-text-links__a {
+		color: #eee;
+		&:hover {
+			color: @blue;
+		}
+	}
 }
 
 .site-logo {
@@ -47,13 +53,19 @@ textarea {
 }
 
 .main-catalog {
+	.ty-menu__item-link {
+		/*position: relative;
+		&::after {
+			content: "\e019";
+			font-family: 'glyphs';
+		}*/
+	}
 	.ty-menu__item {
 		border-right: 1px solid #ddd;
 		border-bottom: 1px solid #ddd;		
 		margin-left: -1px;
 		margin-bottom: -1px;
 		margin-right: -1px;
-		//position: relative;
 		&-link {
 			color: lighten(@black, 25%);
 			font-weight: bold;
@@ -149,6 +161,7 @@ textarea {
 	.ty-menu__item-toggle {
 		color: @blue !important;
 		height: 100%;
+		font-size: 24px;
 	}
 }
 
@@ -614,7 +627,7 @@ input[type=email], {
 //обратный звонок
 .ty-cr-phone-number-link {
 	.ty-cr-phone {
-		font-size: 26px !important;
+		font-size: 23px !important;
 		margin-bottom: 10px;
 		@media @mobile {
 			font-size: 46px !important;
@@ -641,4 +654,38 @@ input[type=email], {
 		border: 1px solid #ddd;
 		background: #eee;
 	}
+}
+
+//кнопка вверх
+.scrollup {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	width: 45px;
+	height: 45px;
+	background: rgba(0, 0, 0, 0.33);
+	border: 4px solid rgba(0, 0, 0, 0.33);
+	outline: none;
+	transition: all .3s;
+}
+.scrollup::before {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-left: 5px solid rgba(0, 0, 0, 0.33);
+	border-top: 5px solid rgba(0, 0, 0, 0.33);
+	top: 50%;
+	left: 50%;
+	margin-top: 5px;
+	margin-left: 2px;
+	transform: rotate(45deg);
+}
+.scrollup:hover {
+	transform: rotateY(180deg);
+	background-color: rgba(0, 0, 0, 0.66);
+}
+
+//кнопка сбросить 
+.ty-product-filters__reset-button {
 }
