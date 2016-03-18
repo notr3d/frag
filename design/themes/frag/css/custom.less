@@ -5,6 +5,8 @@
 @white: #f2f3f6;
 @grey: #a8a8a8;
 
+@blue: #0da5e8;
+
 @mobile: ~ "(max-width: 767px)";
 @desktop: ~ "(min-width: 768px)";
 
@@ -51,7 +53,7 @@ textarea {
 		margin-left: -1px;
 		margin-bottom: -1px;
 		margin-right: -1px;
-		position: relative;
+		//position: relative;
 		&-link {
 			color: lighten(@black, 25%);
 			font-weight: bold;
@@ -78,6 +80,9 @@ textarea {
 					margin-bottom: 10px;
 				}
 			}
+		}
+		@media (max-width: 1260px) {
+			position: relative;
 		}
 	}
 	
@@ -142,6 +147,7 @@ textarea {
 		}
 	}
 	.ty-menu__item-toggle {
+		color: @blue !important;
 		height: 100%;
 	}
 }
@@ -420,10 +426,13 @@ input[type="checkbox"] {
 	span {
 		border-radius: 0 !important;
 		transition: all .3s;
+		height: 16px !important;
+		width: 16px !important;
 	}
 	&.active {
 		span {
 			width: 40px !important;
+			background: @blue !important;
 		}
 	}
 }
@@ -605,8 +614,11 @@ input[type=email], {
 //обратный звонок
 .ty-cr-phone-number-link {
 	.ty-cr-phone {
-		font-size: 24px !important;
+		font-size: 26px !important;
 		margin-bottom: 10px;
+		@media @mobile {
+			font-size: 46px !important;
+		}
 	}
 	.ty-cr-link {		
 		span {
@@ -615,6 +627,9 @@ input[type=email], {
     		font-size: 16px !important;
 			color: #fff;
 			background: #f90 url('../../../../../../../../design/themes/frag/media/images/phone.png?1458199720') no-repeat 12px 50%;
+			@media @mobile {
+				width: 300px;
+			}
 		}
 	}
 }
