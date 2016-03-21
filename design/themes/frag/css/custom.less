@@ -166,12 +166,11 @@ textarea {
 }
 
 //кнопка купить на всю длину с плавной анимацией
-.ty-quick-view-button {
-	.ty-btn__secondary {
-		min-width: 300px;
-		box-sizing: border-box;
-		font-weight: bold;
-	}	
+.ty-quick-view-button .ty-btn__secondary {	 	
+	min-width: 220px;
+	box-sizing: border-box;
+	font-weight: bold;
+	width: 100% !important;		
 }
 
 .ty-quick-view-button {
@@ -232,6 +231,47 @@ textarea {
 				color: lighten(@secondary_button, 15%);
 			}
 		}
+	}
+}
+
+.ty-product-switcher {
+	padding: 0 35px;
+}
+
+.ty-icon-left-circle {
+	padding: 5px 10px;
+	margin-right: 5px;
+	&::before {
+		color: @blue;
+		content: "\e020";
+		transition: all .3s;
+	}
+	&:hover {
+		&::before {
+			color: lighten(@blue, 15%) !important;
+		}
+	}
+}
+
+.ty-icon-right-circle {
+	padding: 5px 10px;
+	&::before {
+		content: "\e01f";
+		transition: all .3s;
+	}
+	&:hover {
+		&::before {
+			color: lighten(@blue, 15%) !important;
+		}
+	}
+}
+
+.ty-breadcrumbs {
+	.ty-icon-left-circle {
+		background: #eee !important;
+	}
+	.ty-icon-right-circle {
+		background: #eee !important;
 	}
 }
 
@@ -397,9 +437,13 @@ input[type="checkbox"] {
 }
 
 //окошко аккаунта
+.ty-account-info {
+	padding-top: 0;
+}
+
 .ty-account-info__orders {
 	border-top: 1px solid @grey;
-	margin-top: 10px !important;
+	margin-top: 0 !important;
 }
 
 //окно корзинки
@@ -566,7 +610,9 @@ input[type=tel],
 input[type=number],
 input[type=color],
 input[type=email], {
-    border: 1px solid #ccc;  
+    border: 1px solid #ccc; 
+	padding: 4px 8px;
+	box-sizing: border-box;
 	transition: all .3s;
 	box-shadow: inset 0 0 2px 0px rgba(0,0,0,0.2);
 	&:hover {
@@ -586,7 +632,7 @@ input[type=email], {
 
 //всплывающее окно
 .ui-dialog {
-	border-radius: 15px;
+	
 }
 
 .ty-discussion__review-a {
@@ -688,4 +734,56 @@ input[type=email], {
 
 //кнопка сбросить 
 .ty-product-filters__reset-button {
+}
+
+.ty-product-block__note {
+	.product-promo-text {
+		border: 1px solid #ddd;	
+		padding: 10px 15px;
+	}	
+	.product-promo-header {
+		padding-bottom: 5px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+//выпадающий список
+.ty-sort-dropdown__wrapper {
+	padding: 5px 10px 9px;
+}
+
+.ty-sort-dropdown__content-item {
+	padding: 0;
+	.ty-sort-dropdown__content-item-a {
+		padding: 5px 10px 9px;
+	}
+}
+
+.ty-sort-dropdown__content {
+	min-width: 134px;	
+}
+
+//сортировка
+.ty-sort-container {
+	padding-left: 0;
+}
+
+//хар-ки товара
+.ty-product-feature__label {
+	width: 100px;
+	border-right: 1px solid #ddd;
+}
+
+.ty-product-bigpicture__sidebar-bottom {
+	.ty-btn {
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+}
+
+.ty-control-group__label {
+	margin-right: 78px;
 }
