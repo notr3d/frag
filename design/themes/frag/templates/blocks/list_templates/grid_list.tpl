@@ -79,6 +79,43 @@
                                                 {$smarty.capture.$rating nofilter}
                                             </div>
                                         {/if}
+                                        
+<!--
+																				<div class="my-spec">	
+																				{hook name="products:brand"}
+																						<div class="ty-product-bigpicture__brand">
+																								{include file="views/products/components/product_features_short_list.tpl" features=$product.header_features feature_image=true}
+																						</div>
+																				{/hook}	
+																																						
+																					<table class="my-spec__table">
+																						<tr>
+																							<td>Процессор</td>
+																							<td>Core i5 6600 (4 ядра / 4 потока)</td>
+																						</tr>
+																						<tr>
+																							<td>Видеокарта</td>
+																							<td>GeForce GTX 960</td>
+																						</tr>
+																						<tr>
+																							<td>Мат. плата</td>
+																							<td>Z170</td>
+																						</tr>
+																						<tr>
+																							<td>Память</td>
+																							<td>8GB DDR4</td>
+																						</tr>
+																						<tr>
+																							<td>SSD</td>
+																							<td>Нет</td>
+																						</tr>
+																						<tr>
+																							<td>HDD</td>
+																							<td>1Tb HDD</td>
+																						</tr>
+																					</table>
+																				</div>
+-->
 
                                         <div class="ty-grid-list__control">
                                             {if $settings.Appearance.enable_quick_view == 'Y'}
