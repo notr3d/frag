@@ -45,8 +45,14 @@ textarea {
 	margin-top: 15px;
 }
 
-.ty-cr-content-grid {
-	margin-top: 15px;
+//профиль и корзина
+.top-links-grid {
+	.ty-account-info__title-txt {
+		color: #fff;
+	}
+	.ty-minicart-title {
+		color: #fff;
+	}
 }
 
 .main-search {
@@ -66,7 +72,9 @@ textarea {
 		border-bottom: 1px solid #ddd;		
 		margin-left: -1px;
 		margin-bottom: -1px;
-		margin-right: -1px;
+		@media @mobile {
+			margin-right: -1px;
+		}
 		&-link {
 			color: lighten(@black, 25%);
 			font-weight: bold;
@@ -728,6 +736,7 @@ input[type=email], {
 //обратный звонок
 .ty-cr-phone-number-link {
 	.ty-cr-phone {
+		font-weight: normal !important;
 		font-size: 23px !important;
 		margin-bottom: 10px;
 		@media @mobile {
@@ -738,12 +747,18 @@ input[type=email], {
 		span {
 			display: inline-block;
 			padding: 12px 20px 12px 44px;
-    		font-size: 16px !important;
+			font-size: 16px !important;
 			color: #fff;
 			background: #f90 url('../../../../../../../../design/themes/frag/media/images/phone.png?1458199720') no-repeat 12px 50%;
+			transition: all .3s;
 			@media @mobile {
 				width: 300px;
 			}
+		}
+		&:hover {
+			span {
+				background-color: lighten(#f90, 15%);
+			}			
 		}
 	}
 }
@@ -869,27 +884,52 @@ input[type=email], {
 	left: 3px;
 }
 
-//.my-spec {
-//	margin-top: 5px;
-//	&__table {
-//		width: 100%;
-//		td {
-//			padding: 5px;
-//			border: 1px solid #e3e3e3;
-//			&:first-child {
-//				text-align: right;
-//			}
-//			&:last-child {
-//				width: 75%;				
-//			}
-//		}
-//	}
-//}
-
 //заголовки главной
 .ty-mainbox-simple-title {
 	font-weight: normal;
 	text-align: center;
 	padding-bottom: 5px;
 	margin-bottom: 15px;
+}
+
+
+//горячие предложения
+.homepage-hotdeals {
+	.owl-item {
+		padding: 0 15px;
+		box-sizing: border-box;
+		margin-bottom: 5px;
+		&:hover {
+			.ty-scroller-list__img-block {
+				box-shadow: 0 0 10px 0px rgba(0,0,0,0.3);
+			}
+			.ty-scroller-list__description {
+				box-shadow: 0 0 10px 0px rgba(0,0,0,0.3);
+			}
+		}
+	}
+	.ty-scroller-list__img-block {
+		//margin: 0 5px;
+		padding: 15px 0;
+		border: 1px solid #ddd !important;
+		transition: all .3s;
+	}
+	.ty-scroller-list__description {
+		background: #eee !important;
+		border: 1px solid #ddd !important;
+		border-top: none;
+		padding-bottom: 10px;
+		transition: all .3s;
+		.ty-simple-list .ty-discount-label {
+			top: 20px !important;
+			right: 15px !important;
+		}
+	}
+	.product-title {
+		margin-top: 5px;
+	}	
+}
+
+.our-brands-grid {
+	margin-bottom: 0;
 }
