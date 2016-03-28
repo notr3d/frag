@@ -106,7 +106,12 @@ textarea {
 			position: relative;
 		}
 	}
-	
+	.ty-menu__item-active {
+		.ty-menu__item-link {
+			background: @blue;
+			color: #fff;
+		}
+	}
 	.ty-menu__submenu-items {
 		padding: 8px 15px 0;
 		//background: #eee;
@@ -198,6 +203,12 @@ textarea {
 	&:hover {
 		background: #eee;		
 		border-color: #ddd;
+	}
+	.ty-grid-list__image {
+		//padding: 0;
+	}
+	.owl-item {
+		padding: 20px 0;
 	}
 }
 
@@ -350,8 +361,8 @@ input[type="checkbox"] {
 		display: none;
 		width: 6px;
 		height: 3px;
-		border-left: 2px solid @blue;
-		border-bottom: 2px solid @blue;
+		border-left: 2px solid #fff;
+		border-bottom: 2px solid #fff;
 		position: absolute;
 		left: 3px;
 		top: 4px;
@@ -359,6 +370,10 @@ input[type="checkbox"] {
 		pointer-events: none;
 	}
 	&:checked {
+		&::before {
+			background: @blue;
+			box-shadow: none;
+		}
 		&::after {
 			display: block;
 		}
@@ -735,6 +750,7 @@ input[type=email], {
 
 //обратный звонок
 .ty-cr-phone-number-link {
+	margin-top: 20px !important;
 	.ty-cr-phone {
 		font-weight: normal !important;
 		font-size: 23px !important;
@@ -932,4 +948,24 @@ input[type=email], {
 
 .our-brands-grid {
 	margin-bottom: 0;
+}
+
+//всплывающее окно
+.ui-dialog {
+	.ui-dialog-titlebar {
+		background: @blue;
+	}
+	.ui-dialog-title {
+		color: #fff !important;
+	}
+	.ty-login__filed-label {
+		margin-right: 0;
+	}
+	.ty-login-reglink {
+		margin: 15px;
+	}
+	.ty-login-reglink__a {		
+		.ty-btn();
+		.ty-btn__primary();
+	}
 }
