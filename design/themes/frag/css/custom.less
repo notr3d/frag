@@ -57,6 +57,12 @@ textarea {
 
 .main-search {
 	margin: 6px;
+	.ty-icon-search {
+		color: @blue;
+		&:hover {
+			color: lighten(@blue, 15%);
+		}
+	}
 }
 
 .main-catalog {
@@ -180,17 +186,16 @@ textarea {
 }
 
 
-//кнопка купить на всю длину с плавной анимацией
-.ty-quick-view-button .ty-btn__secondary {
+//кнопка купить
+.ty-quick-view-button {
 	box-sizing: border-box;
 	font-weight: bold;
 	width: 120px !important;	
 	left: 50%;
 	margin-left: -60px;
 	position: absolute;
-}
-
-.ty-quick-view-button {
+	transform: rotateX(90deg);
+	transform-origin: top;
 	transition: all .3s;
 	opacity: 0;
 }
@@ -215,6 +220,7 @@ textarea {
 .ty-grid-list__item:hover {
 	.ty-quick-view-button {
 		opacity: 1;
+		transform: rotateX(0deg) !important;
 	}
 	.ty-icon-left-circle {
 		opacity: 1;
@@ -555,6 +561,20 @@ input[type="checkbox"] {
 			padding-left: 20px;
 		}
 	}	
+	/*position: relative;
+	overflow: hidden;
+	&::before {
+		content: '';
+		width: 200px;
+		height: 150px;
+		display: block;
+		background: url(../media/images/letter.png) no-repeat;
+		background-size: contain;
+		position: absolute;
+		opacity: .3;
+		transform: rotate(-15deg);
+		z-index: 0;
+	}*/
 }
 
 .owl-page {
@@ -762,7 +782,7 @@ input[type=email], {
 	.ty-cr-link {		
 		span {
 			display: inline-block;
-			padding: 12px 20px 12px 44px;
+			padding: 6px 20px 6px 44px;
 			font-size: 16px !important;
 			color: #fff;
 			background: #f90 url('../../../../../../../../design/themes/frag/media/images/phone.png?1458199720') no-repeat 12px 50%;
@@ -906,6 +926,9 @@ input[type=email], {
 	text-align: center;
 	padding-bottom: 5px;
 	margin-bottom: 15px;
+	@media @mobile {
+		text-align: left;
+	}
 }
 
 
@@ -968,4 +991,17 @@ input[type=email], {
 		.ty-btn();
 		.ty-btn__primary();
 	}
+}
+
+//всплыващий список
+.top-my-account {
+	.ty-dropdown-box__content {
+		left: 0;
+	}
+}
+
+.cm-popup-box {
+	margin-top: 0;
+	border: none;
+	box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.3);
 }
